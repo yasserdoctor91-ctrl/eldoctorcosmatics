@@ -110,8 +110,8 @@ function populateFormFields() {
   setInputValue('seo-keywords', settings.seo?.keywords || '');
 
   // Admin Security Credentials
-  setInputValue('auth-username', settings.auth?.username || 'admin');
-  setInputValue('auth-password', settings.auth?.password || 'admin123');
+  setInputValue('auth-username', settings.auth?.username || 'yasser');
+  setInputValue('auth-password', settings.auth?.password || '2015+');
 
   // Previews
   updateImagePreviewElements();
@@ -169,7 +169,7 @@ function bindFormChangeEvents() {
   bindRealtimeInput('brand-website', (val) => { settings.brand.website = val; });
 
   // Profile & Logo
-  bindRealtimeInput('profile-avatar-path', (val) => {
+  bindRealtimeInput('el-doctor-logo.svg', (val) => {
     settings.profile.avatar = val.trim();
     updateImagePreviewElements();
   });
@@ -182,7 +182,7 @@ function bindFormChangeEvents() {
   bindRealtimeInput('logo-badge-text', (val) => { settings.logo.badgeText = val; });
 
   // Avatar Upload
-  const avatarUploadInput = document.getElementById('avatar-file-input');
+  const avatarUploadInput = document.getElementById('el-doctor-logo.svg');
   if (avatarUploadInput) {
     avatarUploadInput.addEventListener('change', async (e) => {
       const file = e.target.files[0];
