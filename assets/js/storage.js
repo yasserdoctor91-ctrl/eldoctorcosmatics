@@ -64,7 +64,7 @@ export const DEFAULT_SETTINGS = {
       id: 'l1',
       platform: 'WhatsApp',
       label: 'تواصل عبر واتساب',
-      url: 'https://wa.me/01103131373',
+      url: 'https://wa.me/+201103131373',
       enabled: true,
       featured: true,
       badge: 'مميّز'
