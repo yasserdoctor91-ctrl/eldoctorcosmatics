@@ -16,7 +16,7 @@ export const DEFAULT_SETTINGS = {
     badgeText: 'نشط'
   },
   profile: {
-    avatar: 'assets/images/el doctor logo-01.png',
+    avatar: 'el-doctor-logo.svg',
     badge: 'نشط',
     verified: true
   },
