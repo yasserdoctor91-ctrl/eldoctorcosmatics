@@ -15,11 +15,16 @@ export function renderPreview(settings, containerElement) {
   const { brand, logo, profile, links, typography } = settings;
 
   // Profile Avatar & Logo HTML sources
-  let avatarSrc = (profile && profile.avatar) || 'assets/images/el doctor logo-01.png';
-  if (!avatarSrc.startsWith('http') && !avatarSrc.startsWith('data:') && !avatarSrc.startsWith('/') && !avatarSrc.startsWith('assets/')) {
-    avatarSrc = 'assets/images/' + avatarSrc;
+  let avatarSrc = (profile && profile.avatar) || './logo.svg';
+  if (avatarSrc.includes('eldoctor_logo') || avatarSrc.includes('el doctor logo')) {
+    avatarSrc = './logo.svg';
+  } else if (!avatarSrc.startsWith('http') && !avatarSrc.startsWith('data:') && !avatarSrc.startsWith('/') && !avatarSrc.startsWith('assets/') && !avatarSrc.startsWith('.')) {
+    avatarSrc = './' + avatarSrc;
   }
-  const logoSrc = logo ? logo.url : '';
+  let logoSrc = logo ? logo.url : '';
+  if (logoSrc.includes('eldoctor_logo') || logoSrc.includes('el doctor logo')) {
+    logoSrc = './logo.svg';
+  }
 
   // Filter enabled links
   const activeLinks = (links || []).filter(l => l.enabled);
@@ -69,7 +74,7 @@ export function renderPreview(settings, containerElement) {
   containerElement.innerHTML = `
     <div class="profile-hero">
       <div class="avatar-container">
-        <img src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(brand.name)}" class="profile-avatar" onerror="this.onerror=null; this.src='/assets/images/eldoctor_logo.svg';" />
+        <img src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(brand.name)}" class="profile-avatar" onerror="this.onerror=null; this.src='./logo.svg';" />
         ${logoSrc && logoSrc !== avatarSrc ? `
           <div class="brand-logo-badge">
             <img src="${escapeHtml(logoSrc)}" alt="Logo" />
@@ -87,7 +92,7 @@ export function renderPreview(settings, containerElement) {
         
         ${brand.website ? `
           <a href="${escapeHtml(brand.website)}" target="_blank" rel="noopener noreferrer" class="website-pill-btn">
-            ${(logoSrc || avatarSrc) ? `<img src="${escapeHtml(logoSrc || avatarSrc)}" alt="Website Logo" style="width: 20px; height: 20px; object-fit: contain; border-radius: 4px; background: #ffffff; padding: 2px;" onerror="this.style.display='none';" />` : getPlatformIcon('Website')}
+            ${(logoSrc || avatarSrc) ? `<img src="${escapeHtml(logoSrc || avatarSrc)}" alt="Website Logo" style="width: 20px; height: 20px; object-fit: contain; border-radius: 4px; background: #ffffff; padding: 2px;" onerror="this.onerror=null; this.src='./logo.svg';" />` : getPlatformIcon('Website')}
             <span>${escapeHtml(brand.website.replace(/^https?:\/\//, ''))}</span>
             <span style="opacity: 0.7;">${UI_ICONS.externalLink}</span>
           </a>

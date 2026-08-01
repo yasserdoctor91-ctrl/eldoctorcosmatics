@@ -3,7 +3,7 @@
  * Manages LocalStorage persistence, defaults, export, and import.
  */
 
-const STORAGE_KEY = 'linkpage_settings_v6';
+const STORAGE_KEY = 'linkpage_settings_v9';
 
 export const DEFAULT_SETTINGS = {
   brand: {
@@ -12,11 +12,11 @@ export const DEFAULT_SETTINGS = {
     website: 'https://doctor.drugza.net'
   },
   logo: {
-    url: '/assets/images/eldoctor_logo.svg', // Base64 data URL or external image URL
+    url: './logo.svg', // Base64 data URL or external image URL
     badgeText: 'نشط'
   },
   profile: {
-    avatar: 'el-doctor-logo.svg',
+    avatar: './logo.svg',
     badge: 'نشط',
     verified: true
   },
@@ -64,7 +64,7 @@ export const DEFAULT_SETTINGS = {
       id: 'l1',
       platform: 'WhatsApp',
       label: 'تواصل عبر واتساب',
-      url: 'https://wa.me/+201103131373',
+      url: 'https://wa.me/01103131373',
       enabled: true,
       featured: true,
       badge: 'مميّز'
@@ -95,12 +95,26 @@ export const DEFAULT_SETTINGS = {
       enabled: true,
       featured: false,
       badge: ''
+    },
+    {
+      id: 'l5',
+      platform: 'Google Maps',
+      label: 'مصر, القاهرة · القاهرة · قسم النزهة',
+      url: 'https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bing.com%2Fmaps%2Fdefault.aspx%3Fv%3D2%26pc%3DFACEBK%26mid%3D8100%26where1%3D43%2520-%2520%25D8%25B4%25D8%25A7%25D8%25B1%25D8%25B9%2520%25D8%25B9%25D8%25B2%25D9%258A%25D8%25B2%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B5%25D8%25B1%25D9%2589%2520%25D9%2585%25D9%2586%2520%25D8%25AC%25D8%25B3%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25B3%25D9%2588%25D9%258A%25D8%25B3%2520-%2520%25D8%25A8%25D8%25AC%25D9%2588%25D8%25A7%25D8%25B1%2520%25D9%2585%25D8%25AD%25D8%25B7%25D8%25A9%2520%25D9%2585%25D8%25AA%25D8%25B1%25D9%2588%2520%25D8%25A7%25D9%2584%25D9%2586%25D8%25B2%25D9%2587%25D8%25A9%252C%2520Cairo%252C%2520Egypt%26FORM%3DFBKPL1%26mkt%3Den-US%26fbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFVM3puSkFFcXJQYXh1cjBRc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtKCMHS8Irg1pPqOrBNIrkJnt315cSUexORNXb7w_ea8FLVM4jvf404vduHs_aem_wDDs4m9YdlnJ82rV77oEeA&h=AUCLf-X6MCIp4rvU84W1CNUHVYvUtPeOQ4NFzvAhvt5OhaCDVVAJJbDKcGQ4GEKTZj1Lj30S0D5qSjVidiS8-2TserhtG7VJGjma46C9l19A5H6DMkYL6Ugi99zSH6-uVsJ0',
+      enabled: true,
+      featured: true,
+      badge: 'الموقع'
     }
   ],
   seo: {
     metaTitle: 'Eldoctor | الدكتور للمستلزمات الطبية ومستحضرات التجميل',
     metaDescription: 'الصفحة الرسمية للدكتور للمستلزمات الطبية ومستحضرات التجميل - تواصل معنا عبر فيسبوك، إنستغرام، تليجرام، وواتساب.',
     keywords: 'Eldoctor, الدكتور, مستلزمات طبية, مستحضرات تجميل, تجميل, طبية'
+  },
+  qr: {
+    color: '#382d54',
+    bgColor: '#ffffff',
+    showLogo: true
   }
 };
 
@@ -108,7 +122,7 @@ let inMemorySettings = null;
 
 function mergeWithDefaults(parsed) {
   if (!parsed || typeof parsed !== 'object') return { ...DEFAULT_SETTINGS };
-  return {
+  const merged = {
     ...DEFAULT_SETTINGS,
     ...parsed,
     brand: { ...DEFAULT_SETTINGS.brand, ...(parsed.brand || {}) },
@@ -119,8 +133,35 @@ function mergeWithDefaults(parsed) {
     typography: { ...DEFAULT_SETTINGS.typography, ...(parsed.typography || {}) },
     seo: { ...DEFAULT_SETTINGS.seo, ...(parsed.seo || {}) },
     auth: { ...DEFAULT_SETTINGS.auth, ...(parsed.auth || {}) },
+    qr: { ...DEFAULT_SETTINGS.qr, ...(parsed.qr || {}) },
     links: Array.isArray(parsed.links) ? parsed.links : DEFAULT_SETTINGS.links
   };
+  if (!merged.logo.url || merged.logo.url.includes('eldoctor_logo') || merged.logo.url.includes('el doctor logo')) {
+    merged.logo.url = './logo.svg';
+  }
+  if (!merged.profile.avatar || merged.profile.avatar.includes('eldoctor_logo') || merged.profile.avatar.includes('el doctor logo')) {
+    merged.profile.avatar = './logo.svg';
+  }
+  const targetMapUrl = 'https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bing.com%2Fmaps%2Fdefault.aspx%3Fv%3D2%26pc%3DFACEBK%26mid%3D8100%26where1%3D43%2520-%2520%25D8%25B4%25D8%25A7%25D8%25B1%25D8%25B9%2520%25D8%25B9%25D8%25B2%25D9%258A%25D8%25B2%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B5%25D8%25B1%25D9%2589%2520%25D9%2585%25D9%2586%2520%25D8%25AC%25D8%25B3%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25B3%25D9%2588%25D9%258A%25D8%25B3%2520-%2520%25D8%25A8%25D8%25AC%25D9%2588%25D8%25A7%25D8%25B1%2520%25D9%2585%25D8%25AD%25D8%25B7%25D8%25A9%2520%25D9%2585%25D8%25AA%25D8%25B1%25D9%2588%2520%25D8%25A7%25D9%2584%25D9%2586%25D8%25B2%25D9%2587%25D8%25A9%252C%2520Cairo%252C%2520Egypt%26FORM%3DFBKPL1%26mkt%3Den-US%26fbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFVM3puSkFFcXJQYXh1cjBRc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtKCMHS8Irg1pPqOrBNIrkJnt315cSUexORNXb7w_ea8FLVM4jvf404vduHs_aem_wDDs4m9YdlnJ82rV77oEeA&h=AUCLf-X6MCIp4rvU84W1CNUHVYvUtPeOQ4NFzvAhvt5OhaCDVVAJJbDKcGQ4GEKTZj1Lj30S0D5qSjVidiS8-2TserhtG7VJGjma46C9l19A5H6DMkYL6Ugi99zSH6-uVsJ0';
+  if (Array.isArray(merged.links)) {
+    let mapItem = merged.links.find(l => l.platform === 'Google Maps' || (l.url && (l.url.includes('30.104801') || l.url.includes('google.com/maps') || l.url.includes('bing.com/maps'))));
+    if (mapItem) {
+      mapItem.url = targetMapUrl;
+      mapItem.label = 'مصر, القاهرة · القاهرة · قسم النزهة';
+      mapItem.badge = 'الموقع';
+    } else {
+      merged.links.push({
+        id: 'l_' + Date.now(),
+        platform: 'Google Maps',
+        label: 'مصر, القاهرة · القاهرة · قسم النزهة',
+        url: targetMapUrl,
+        enabled: true,
+        featured: true,
+        badge: 'الموقع'
+      });
+    }
+  }
+  return merged;
 }
 
 /**

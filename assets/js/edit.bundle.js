@@ -2104,7 +2104,7 @@
   });
 
   // assets/js/storage.js
-  var STORAGE_KEY = "linkpage_settings_v6";
+  var STORAGE_KEY = "linkpage_settings_v9";
   var DEFAULT_SETTINGS = {
     brand: {
       name: "Eldoctor",
@@ -2112,12 +2112,12 @@
       website: "https://doctor.drugza.net"
     },
     logo: {
-      url: "/assets/images/eldoctor_logo.svg",
+      url: "./logo.svg",
       // Base64 data URL or external image URL
       badgeText: "\u0646\u0634\u0637"
     },
     profile: {
-      avatar: "assets/images/el doctor logo-01.png",
+      avatar: "./logo.svg",
       badge: "\u0646\u0634\u0637",
       verified: true
     },
@@ -2197,18 +2197,32 @@
         enabled: true,
         featured: false,
         badge: ""
+      },
+      {
+        id: "l5",
+        platform: "Google Maps",
+        label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
+        url: "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bing.com%2Fmaps%2Fdefault.aspx%3Fv%3D2%26pc%3DFACEBK%26mid%3D8100%26where1%3D43%2520-%2520%25D8%25B4%25D8%25A7%25D8%25B1%25D8%25B9%2520%25D8%25B9%25D8%25B2%25D9%258A%25D8%25B2%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B5%25D8%25B1%25D9%2589%2520%25D9%2585%25D9%2586%2520%25D8%25AC%25D8%25B3%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25B3%25D9%2588%25D9%258A%25D8%25B3%2520-%2520%25D8%25A8%25D8%25AC%25D9%2588%25D8%25A7%25D8%25B1%2520%25D9%2585%25D8%25AD%25D8%25B7%25D8%25A9%2520%25D9%2585%25D8%25AA%25D8%25B1%25D9%2588%2520%25D8%25A7%25D9%2584%25D9%2586%25D8%25B2%25D9%2587%25D8%25A9%252C%2520Cairo%252C%2520Egypt%26FORM%3DFBKPL1%26mkt%3Den-US%26fbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFVM3puSkFFcXJQYXh1cjBRc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtKCMHS8Irg1pPqOrBNIrkJnt315cSUexORNXb7w_ea8FLVM4jvf404vduHs_aem_wDDs4m9YdlnJ82rV77oEeA&h=AUCLf-X6MCIp4rvU84W1CNUHVYvUtPeOQ4NFzvAhvt5OhaCDVVAJJbDKcGQ4GEKTZj1Lj30S0D5qSjVidiS8-2TserhtG7VJGjma46C9l19A5H6DMkYL6Ugi99zSH6-uVsJ0",
+        enabled: true,
+        featured: true,
+        badge: "\u0627\u0644\u0645\u0648\u0642\u0639"
       }
     ],
     seo: {
       metaTitle: "Eldoctor | \u0627\u0644\u062F\u0643\u062A\u0648\u0631 \u0644\u0644\u0645\u0633\u062A\u0644\u0632\u0645\u0627\u062A \u0627\u0644\u0637\u0628\u064A\u0629 \u0648\u0645\u0633\u062A\u062D\u0636\u0631\u0627\u062A \u0627\u0644\u062A\u062C\u0645\u064A\u0644",
       metaDescription: "\u0627\u0644\u0635\u0641\u062D\u0629 \u0627\u0644\u0631\u0633\u0645\u064A\u0629 \u0644\u0644\u062F\u0643\u062A\u0648\u0631 \u0644\u0644\u0645\u0633\u062A\u0644\u0632\u0645\u0627\u062A \u0627\u0644\u0637\u0628\u064A\u0629 \u0648\u0645\u0633\u062A\u062D\u0636\u0631\u0627\u062A \u0627\u0644\u062A\u062C\u0645\u064A\u0644 - \u062A\u0648\u0627\u0635\u0644 \u0645\u0639\u0646\u0627 \u0639\u0628\u0631 \u0641\u064A\u0633\u0628\u0648\u0643\u060C \u0625\u0646\u0633\u062A\u063A\u0631\u0627\u0645\u060C \u062A\u0644\u064A\u062C\u0631\u0627\u0645\u060C \u0648\u0648\u0627\u062A\u0633\u0627\u0628.",
       keywords: "Eldoctor, \u0627\u0644\u062F\u0643\u062A\u0648\u0631, \u0645\u0633\u062A\u0644\u0632\u0645\u0627\u062A \u0637\u0628\u064A\u0629, \u0645\u0633\u062A\u062D\u0636\u0631\u0627\u062A \u062A\u062C\u0645\u064A\u0644, \u062A\u062C\u0645\u064A\u0644, \u0637\u0628\u064A\u0629"
+    },
+    qr: {
+      color: "#382d54",
+      bgColor: "#ffffff",
+      showLogo: true
     }
   };
   var inMemorySettings = null;
   function mergeWithDefaults(parsed) {
     if (!parsed || typeof parsed !== "object") return { ...DEFAULT_SETTINGS };
-    return {
+    const merged = {
       ...DEFAULT_SETTINGS,
       ...parsed,
       brand: { ...DEFAULT_SETTINGS.brand, ...parsed.brand || {} },
@@ -2219,8 +2233,35 @@
       typography: { ...DEFAULT_SETTINGS.typography, ...parsed.typography || {} },
       seo: { ...DEFAULT_SETTINGS.seo, ...parsed.seo || {} },
       auth: { ...DEFAULT_SETTINGS.auth, ...parsed.auth || {} },
+      qr: { ...DEFAULT_SETTINGS.qr, ...parsed.qr || {} },
       links: Array.isArray(parsed.links) ? parsed.links : DEFAULT_SETTINGS.links
     };
+    if (!merged.logo.url || merged.logo.url.includes("eldoctor_logo") || merged.logo.url.includes("el doctor logo")) {
+      merged.logo.url = "./logo.svg";
+    }
+    if (!merged.profile.avatar || merged.profile.avatar.includes("eldoctor_logo") || merged.profile.avatar.includes("el doctor logo")) {
+      merged.profile.avatar = "./logo.svg";
+    }
+    const targetMapUrl = "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bing.com%2Fmaps%2Fdefault.aspx%3Fv%3D2%26pc%3DFACEBK%26mid%3D8100%26where1%3D43%2520-%2520%25D8%25B4%25D8%25A7%25D8%25B1%25D8%25B9%2520%25D8%25B9%25D8%25B2%25D9%258A%25D8%25B2%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B5%25D8%25B1%25D9%2589%2520%25D9%2585%25D9%2586%2520%25D8%25AC%25D8%25B3%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25B3%25D9%2588%25D9%258A%25D8%25B3%2520-%2520%25D8%25A8%25D8%25AC%25D9%2588%25D8%25A7%25D8%25B1%2520%25D9%2585%25D8%25AD%25D8%25B7%25D8%25A9%2520%25D9%2585%25D8%25AA%25D8%25B1%25D9%2588%2520%25D8%25A7%25D9%2584%25D9%2586%25D8%25B2%25D9%2587%25D8%25A9%252C%2520Cairo%252C%2520Egypt%26FORM%3DFBKPL1%26mkt%3Den-US%26fbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFVM3puSkFFcXJQYXh1cjBRc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtKCMHS8Irg1pPqOrBNIrkJnt315cSUexORNXb7w_ea8FLVM4jvf404vduHs_aem_wDDs4m9YdlnJ82rV77oEeA&h=AUCLf-X6MCIp4rvU84W1CNUHVYvUtPeOQ4NFzvAhvt5OhaCDVVAJJbDKcGQ4GEKTZj1Lj30S0D5qSjVidiS8-2TserhtG7VJGjma46C9l19A5H6DMkYL6Ugi99zSH6-uVsJ0";
+    if (Array.isArray(merged.links)) {
+      let mapItem = merged.links.find((l) => l.platform === "Google Maps" || l.url && (l.url.includes("30.104801") || l.url.includes("google.com/maps") || l.url.includes("bing.com/maps")));
+      if (mapItem) {
+        mapItem.url = targetMapUrl;
+        mapItem.label = "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629";
+        mapItem.badge = "\u0627\u0644\u0645\u0648\u0642\u0639";
+      } else {
+        merged.links.push({
+          id: "l_" + Date.now(),
+          platform: "Google Maps",
+          label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
+          url: targetMapUrl,
+          enabled: true,
+          featured: true,
+          badge: "\u0627\u0644\u0645\u0648\u0642\u0639"
+        });
+      }
+    }
+    return merged;
   }
   function loadSettings() {
     let loadedRaw = null;
@@ -2555,11 +2596,14 @@
     setTimeout(() => removeToast(toast), duration);
   }
   function removeToast(toast) {
-    if (!toast || toast.classList.contains("toast-hiding")) return;
+    if (!toast || toast.dataset.closing === "true") return;
+    toast.dataset.closing = "true";
     toast.classList.add("toast-hiding");
-    toast.addEventListener("animationend", () => {
-      toast.remove();
-    });
+    const removeEl = () => {
+      if (toast.parentNode) toast.remove();
+    };
+    toast.addEventListener("animationend", removeEl, { once: true });
+    setTimeout(removeEl, 250);
   }
   function showModal({ title, content, confirmText = "Confirm", cancelText = "Cancel", type = "info", onConfirm, onCancel }) {
     const existingModal = document.getElementById("app-modal");
@@ -2584,8 +2628,16 @@
   `;
     document.body.appendChild(backdrop);
     const close = () => {
+      if (backdrop.dataset.closing === "true") return;
+      backdrop.dataset.closing = "true";
       backdrop.classList.add("modal-closing");
-      backdrop.addEventListener("animationend", () => backdrop.remove());
+      const removeModal = () => {
+        if (backdrop.parentNode) {
+          backdrop.remove();
+        }
+      };
+      backdrop.addEventListener("animationend", removeModal, { once: true });
+      setTimeout(removeModal, 220);
     };
     backdrop.querySelector(".modal-close")?.addEventListener("click", () => {
       close();
@@ -2680,11 +2732,16 @@
     if (!containerElement || !settings2) return;
     applyThemeStyles(settings2, containerElement);
     const { brand, logo, profile, links, typography } = settings2;
-    let avatarSrc = profile && profile.avatar || "assets/images/el doctor logo-01.png";
-    if (!avatarSrc.startsWith("http") && !avatarSrc.startsWith("data:") && !avatarSrc.startsWith("/") && !avatarSrc.startsWith("assets/")) {
-      avatarSrc = "assets/images/" + avatarSrc;
+    let avatarSrc = profile && profile.avatar || "./logo.svg";
+    if (avatarSrc.includes("eldoctor_logo") || avatarSrc.includes("el doctor logo")) {
+      avatarSrc = "./logo.svg";
+    } else if (!avatarSrc.startsWith("http") && !avatarSrc.startsWith("data:") && !avatarSrc.startsWith("/") && !avatarSrc.startsWith("assets/") && !avatarSrc.startsWith(".")) {
+      avatarSrc = "./" + avatarSrc;
     }
-    const logoSrc = logo ? logo.url : "";
+    let logoSrc = logo ? logo.url : "";
+    if (logoSrc.includes("eldoctor_logo") || logoSrc.includes("el doctor logo")) {
+      logoSrc = "./logo.svg";
+    }
     const activeLinks = (links || []).filter((l) => l.enabled);
     let linksHtml = "";
     if (activeLinks.length === 0) {
@@ -2724,7 +2781,7 @@
     containerElement.innerHTML = `
     <div class="profile-hero">
       <div class="avatar-container">
-        <img src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(brand.name)}" class="profile-avatar" onerror="this.onerror=null; this.src='/assets/images/eldoctor_logo.svg';" />
+        <img src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(brand.name)}" class="profile-avatar" onerror="this.onerror=null; this.src='./logo.svg';" />
         ${logoSrc && logoSrc !== avatarSrc ? `
           <div class="brand-logo-badge">
             <img src="${escapeHtml(logoSrc)}" alt="Logo" />
@@ -2742,7 +2799,7 @@
         
         ${brand.website ? `
           <a href="${escapeHtml(brand.website)}" target="_blank" rel="noopener noreferrer" class="website-pill-btn">
-            ${logoSrc || avatarSrc ? `<img src="${escapeHtml(logoSrc || avatarSrc)}" alt="Website Logo" style="width: 20px; height: 20px; object-fit: contain; border-radius: 4px; background: #ffffff; padding: 2px;" onerror="this.style.display='none';" />` : getPlatformIcon("Website")}
+            ${logoSrc || avatarSrc ? `<img src="${escapeHtml(logoSrc || avatarSrc)}" alt="Website Logo" style="width: 20px; height: 20px; object-fit: contain; border-radius: 4px; background: #ffffff; padding: 2px;" onerror="this.onerror=null; this.src='./logo.svg';" />` : getPlatformIcon("Website")}
             <span>${escapeHtml(brand.website.replace(/^https?:\/\//, ""))}</span>
             <span style="opacity: 0.7;">${UI_ICONS.externalLink}</span>
           </a>
@@ -2912,7 +2969,7 @@
     }
     const avatarImg = document.getElementById("avatar-preview-img");
     if (avatarImg) {
-      avatarImg.src = settings.profile.avatar || "assets/images/el doctor logo-01.png";
+      avatarImg.src = settings.profile.avatar || "./logo.svg";
     }
     const logoPathInput = document.getElementById("logo-url-path");
     if (logoPathInput && logoPathInput !== document.activeElement) {
@@ -2978,10 +3035,10 @@
     const removeAvatarBtn = document.getElementById("btn-remove-avatar");
     if (removeAvatarBtn) {
       removeAvatarBtn.addEventListener("click", () => {
-        settings.profile.avatar = "assets/images/el doctor logo-01.png";
+        settings.profile.avatar = "./logo.svg";
         updateImagePreviewElements();
         updateLivePreview();
-        showToast("\u062A\u0645\u062A \u0627\u0633\u062A\u0639\u0627\u062F\u0629 \u0635\u0648\u0631\u0629 \u0627\u0644\u062F\u0643\u062A\u0648\u0631 \u0627\u0644\u0627\u0641\u062A\u0631\u0627\u0636\u064A\u0629 PNG", "info");
+        showToast("\u062A\u0645\u062A \u0627\u0633\u062A\u0639\u0627\u062F\u0629 \u0635\u0648\u0631\u0629 \u0627\u0644\u0644\u0648\u062C\u0648 \u0627\u0644\u0627\u0641\u062A\u0631\u0627\u0636\u064A\u0629 SVG", "info");
       });
     }
     const logoUploadInput = document.getElementById("logo-file-input");

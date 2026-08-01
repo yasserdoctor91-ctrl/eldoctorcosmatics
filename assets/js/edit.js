@@ -110,8 +110,8 @@ function populateFormFields() {
   setInputValue('seo-keywords', settings.seo?.keywords || '');
 
   // Admin Security Credentials
-  setInputValue('auth-username', settings.auth?.username || 'yasser');
-  setInputValue('auth-password', settings.auth?.password || '2015+');
+  setInputValue('auth-username', settings.auth?.username || 'admin');
+  setInputValue('auth-password', settings.auth?.password || 'admin123');
 
   // Previews
   updateImagePreviewElements();
@@ -140,7 +140,7 @@ function updateImagePreviewElements() {
 
   const avatarImg = document.getElementById('avatar-preview-img');
   if (avatarImg) {
-    avatarImg.src = settings.profile.avatar || 'assets/images/el doctor logo-01.png';
+    avatarImg.src = settings.profile.avatar || './logo.svg';
   }
 
   const logoPathInput = document.getElementById('logo-url-path');
@@ -169,7 +169,7 @@ function bindFormChangeEvents() {
   bindRealtimeInput('brand-website', (val) => { settings.brand.website = val; });
 
   // Profile & Logo
-  bindRealtimeInput('el-doctor-logo.svg', (val) => {
+  bindRealtimeInput('profile-avatar-path', (val) => {
     settings.profile.avatar = val.trim();
     updateImagePreviewElements();
   });
@@ -182,7 +182,7 @@ function bindFormChangeEvents() {
   bindRealtimeInput('logo-badge-text', (val) => { settings.logo.badgeText = val; });
 
   // Avatar Upload
-  const avatarUploadInput = document.getElementById('el-doctor-logo.svg');
+  const avatarUploadInput = document.getElementById('avatar-file-input');
   if (avatarUploadInput) {
     avatarUploadInput.addEventListener('change', async (e) => {
       const file = e.target.files[0];
@@ -206,10 +206,10 @@ function bindFormChangeEvents() {
   const removeAvatarBtn = document.getElementById('btn-remove-avatar');
   if (removeAvatarBtn) {
     removeAvatarBtn.addEventListener('click', () => {
-      settings.profile.avatar = 'assets/images/el doctor logo-01.png';
+      settings.profile.avatar = './logo.svg';
       updateImagePreviewElements();
       updateLivePreview();
-      showToast('تمت استعادة صورة الدكتور الافتراضية PNG', 'info');
+      showToast('تمت استعادة صورة اللوجو الافتراضية SVG', 'info');
     });
   }
 
