@@ -13,22 +13,22 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Clean Minimalism Theme Colors (Default Light) */
-  --color-primary: #4f46e5;
-  --color-primary-hover: #4338ca;
-  --color-secondary: #6366f1;
-  --color-accent: #818cf8;
+  /* Doctor Brand Visual Identity Theme Colors (#382d54 Royal Purple & #d96b9d Rose Pink) */
+  --color-primary: #d96b9d;
+  --color-primary-hover: #c45788;
+  --color-secondary: #382d54;
+  --color-accent: #e673a5;
   
-  --color-bg: #f8fafc;
-  --color-bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --color-bg: #faf4f7;
+  --color-bg-gradient: linear-gradient(135deg, #faf4f7 0%, #f4e8ee 50%, #ead7e2 100%);
   --color-surface: #ffffff;
-  --color-surface-hover: #f1f5f9;
+  --color-surface-hover: #f9f0f5;
   
-  --color-text: #0f172a;
-  --color-text-secondary: #64748b;
-  --color-text-muted: #94a3b8;
-  --color-border: rgba(226, 232, 240, 0.9);
-  --color-border-focus: rgba(79, 70, 229, 0.5);
+  --color-text: #382d54;
+  --color-text-secondary: #5e4c82;
+  --color-text-muted: #8c78ad;
+  --color-border: rgba(217, 107, 157, 0.25);
+  --color-border-focus: rgba(217, 107, 157, 0.5);
 
   /* Button Variables */
   --btn-bg: #ffffff;
@@ -114,20 +114,20 @@
 
 /* Preset Themes */
 [data-theme-preset="clean-minimalism"] {
-  --color-primary: #4f46e5;
-  --color-secondary: #6366f1;
-  --color-bg: #f8fafc;
-  --color-bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --color-primary: #d96b9d;
+  --color-secondary: #382d54;
+  --color-bg: #faf4f7;
+  --color-bg-gradient: linear-gradient(135deg, #faf4f7 0%, #f4e8ee 50%, #ead7e2 100%);
   --color-surface: #ffffff;
-  --color-text: #0f172a;
-  --color-text-secondary: #64748b;
+  --color-text: #382d54;
+  --color-text-secondary: #5e4c82;
   --btn-bg: #ffffff;
-  --btn-text: #0f172a;
-  --btn-border: #e2e8f0;
-  --btn-hover: #f8fafc;
+  --btn-text: #382d54;
+  --btn-border: rgba(217, 107, 157, 0.25);
+  --btn-hover: #f9f0f5;
   --card-bg: #ffffff;
-  --card-border: #e2e8f0;
-  --card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
+  --card-border: rgba(217, 107, 157, 0.25);
+  --card-shadow: 0 20px 40px -15px rgba(56, 45, 84, 0.12);
 }
 
 [data-theme-preset="dark-luxury"] {

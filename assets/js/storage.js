@@ -3,13 +3,13 @@
  * Manages LocalStorage persistence, defaults, export, and import.
  */
 
-const STORAGE_KEY = 'linkpage_settings_v10';
+const STORAGE_KEY = 'linkpage_settings_v12';
 
 export const DEFAULT_SETTINGS = {
   brand: {
     name: 'Eldoctor',
     description: 'الدكتور للمستلزمات الطبية ومستحضرات التجميل',
-  /**  website: 'https://doctor.drugza.net'*/
+    website: ''
   },
   logo: {
     url: './logo.svg', // Base64 data URL or external image URL
@@ -27,17 +27,17 @@ export const DEFAULT_SETTINGS = {
     glassBlur: '16px'
   },
   colors: {
-    primary: '#4f46e5',
-    secondary: '#6366f1',
-    background: '#f8fafc',
+    primary: '#ec4899',
+    secondary: '#f472b6',
+    background: '#fdf2f8',
     surface: '#ffffff',
-    text: '#0f172a',
-    textSecondary: '#64748b',
+    text: '#1f2937',
+    textSecondary: '#4b5563',
     buttonBg: '#ffffff',
-    buttonText: '#0f172a',
-    buttonBorder: '#e2e8f0',
-    buttonHover: '#f8fafc',
-    accent: '#818cf8'
+    buttonText: '#1f2937',
+    buttonBorder: '#fbcfe8',
+    buttonHover: '#fce7f3',
+    accent: '#f43f5e'
   },
   typography: {
     fontFamily: 'Cairo',
@@ -51,17 +51,17 @@ export const DEFAULT_SETTINGS = {
     enabled: true
   },
   links: [
-    /**{
-      id: 'l0',
-      platform: 'Website',
-      label: 'الموقع الإلكتروني الرسمي',
-      url: 'https://doctor.drugza.net',
+    {
+      id: 'l_map',
+      platform: 'Google Maps',
+      label: 'مصر, القاهرة · القاهرة · قسم النزهة',
+      url: 'https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA',
       enabled: true,
       featured: true,
       badge: 'الموقع'
-    },*/
+    },
     {
-      id: 'l1',
+      id: 'l_wa',
       platform: 'WhatsApp',
       label: 'تواصل عبر واتساب',
       url: 'https://wa.me/201103131373',
@@ -70,7 +70,16 @@ export const DEFAULT_SETTINGS = {
       badge: 'مميّز'
     },
     {
-      id: 'l2',
+      id: 'l_phone',
+      platform: 'Phone',
+      label: 'اتصل بنا الآن (+201507006060)',
+      url: 'tel:+201507006060',
+      enabled: true,
+      featured: true,
+      badge: 'اتصال'
+    },
+    {
+      id: 'l_fb',
       platform: 'Facebook',
       label: 'صفحتنا على فيسبوك',
       url: 'https://www.facebook.com/profile.php?id=61573099820423',
@@ -79,16 +88,7 @@ export const DEFAULT_SETTINGS = {
       badge: ''
     },
     {
-      id: 'l3',
-      platform: 'Instagram',
-      label: 'حسابنا على إنستغرام',
-      url: 'https://www.instagram.com/eldoc.cosmetics/',
-      enabled: true,
-      featured: false,
-      badge: ''
-    },
-    {
-      id: 'l4',
+      id: 'l_tg',
       platform: 'Telegram',
       label: 'قناتنا على تليجرام',
       url: 'https://t.me/eldocstor',
@@ -97,13 +97,13 @@ export const DEFAULT_SETTINGS = {
       badge: ''
     },
     {
-      id: 'l5',
-      platform: 'Google Maps',
-      label: 'مصر, القاهرة · القاهرة · قسم النزهة',
-      url: 'https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA',
+      id: 'l_ig',
+      platform: 'Instagram',
+      label: 'حسابنا على إنستغرام',
+      url: 'https://www.instagram.com/eldoc.cosmetics/',
       enabled: true,
-      featured: true,
-      badge: 'الموقع'
+      featured: false,
+      badge: ''
     }
   ],
   seo: {
@@ -112,7 +112,7 @@ export const DEFAULT_SETTINGS = {
     keywords: 'Eldoctor, الدكتور, مستلزمات طبية, مستحضرات تجميل, تجميل, طبية'
   },
   qr: {
-    color: '#382d54',
+    color: '#ec4899',
     bgColor: '#ffffff',
     showLogo: true
   }
@@ -133,53 +133,80 @@ function mergeWithDefaults(parsed) {
     typography: { ...DEFAULT_SETTINGS.typography, ...(parsed.typography || {}) },
     seo: { ...DEFAULT_SETTINGS.seo, ...(parsed.seo || {}) },
     auth: { ...DEFAULT_SETTINGS.auth, ...(parsed.auth || {}) },
-    qr: { ...DEFAULT_SETTINGS.qr, ...(parsed.qr || {}) },
-    links: Array.isArray(parsed.links) ? parsed.links : DEFAULT_SETTINGS.links
+    qr: { ...DEFAULT_SETTINGS.qr, ...(parsed.qr || {}) }
   };
+  merged.brand.website = '';
   if (!merged.logo.url || merged.logo.url.includes('eldoctor_logo') || merged.logo.url.includes('el doctor logo')) {
     merged.logo.url = './logo.svg';
   }
   if (!merged.profile.avatar || merged.profile.avatar.includes('eldoctor_logo') || merged.profile.avatar.includes('el doctor logo')) {
     merged.profile.avatar = './logo.svg';
   }
-  const targetMapUrl = 'https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA';
-  const targetWhatsappUrl = 'https://wa.me/201103131373';
 
-  if (Array.isArray(merged.links)) {
-    // Update WhatsApp link
-    let waItem = merged.links.find(l => l.platform === 'WhatsApp' || (l.url && (l.url.includes('wa.me') || l.url.includes('whatsapp.com'))));
-    if (waItem) {
-      waItem.url = targetWhatsappUrl;
-    } else {
-      merged.links.push({
-        id: 'l_wa_' + Date.now(),
-        platform: 'WhatsApp',
-        label: 'تواصل عبر واتساب',
-        url: targetWhatsappUrl,
-        enabled: true,
-        featured: true,
-        badge: 'مميّز'
-      });
+  // Exact 6 links specification & order requested by the user:
+  // 1. Google Maps (العنوان)
+  // 2. WhatsApp
+  // 3. Phone
+  // 4. Facebook
+  // 5. Telegram
+  // 6. Instagram
+  merged.links = [
+    {
+      id: 'l_map',
+      platform: 'Google Maps',
+      label: 'مصر, القاهرة · القاهرة · قسم النزهة',
+      url: 'https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA',
+      enabled: true,
+      featured: true,
+      badge: 'الموقع'
+    },
+    {
+      id: 'l_wa',
+      platform: 'WhatsApp',
+      label: 'تواصل عبر واتساب',
+      url: 'https://wa.me/201103131373',
+      enabled: true,
+      featured: true,
+      badge: 'مميّز'
+    },
+    {
+      id: 'l_phone',
+      platform: 'Phone',
+      label: 'اتصل بنا الآن (+201507006060)',
+      url: 'tel:+201507006060',
+      enabled: true,
+      featured: true,
+      badge: 'اتصال'
+    },
+    {
+      id: 'l_fb',
+      platform: 'Facebook',
+      label: 'صفحتنا على فيسبوك',
+      url: 'https://www.facebook.com/profile.php?id=61573099820423',
+      enabled: true,
+      featured: false,
+      badge: ''
+    },
+    {
+      id: 'l_tg',
+      platform: 'Telegram',
+      label: 'قناتنا على تليجرام',
+      url: 'https://t.me/eldocstor',
+      enabled: true,
+      featured: false,
+      badge: ''
+    },
+    {
+      id: 'l_ig',
+      platform: 'Instagram',
+      label: 'حسابنا على إنستغرام',
+      url: 'https://www.instagram.com/eldoc.cosmetics/',
+      enabled: true,
+      featured: false,
+      badge: ''
     }
+  ];
 
-    // Update Google Maps link
-    let mapItem = merged.links.find(l => l.platform === 'Google Maps' || (l.url && (l.url.includes('30.104801') || l.url.includes('google.com/maps') || l.url.includes('bing.com/maps') || l.url.includes('maps.app.goo.gl') || l.url.includes('facebook.com/l.php'))));
-    if (mapItem) {
-      mapItem.url = targetMapUrl;
-      mapItem.label = 'مصر, القاهرة · القاهرة · قسم النزهة';
-      mapItem.badge = 'الموقع';
-    } else {
-      merged.links.push({
-        id: 'l_map_' + Date.now(),
-        platform: 'Google Maps',
-        label: 'مصر, القاهرة · القاهرة · قسم النزهة',
-        url: targetMapUrl,
-        enabled: true,
-        featured: true,
-        badge: 'الموقع'
-      });
-    }
-  }
   return merged;
 }
 

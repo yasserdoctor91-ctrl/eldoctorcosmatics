@@ -2104,12 +2104,12 @@
   });
 
   // assets/js/storage.js
-  var STORAGE_KEY = "linkpage_settings_v10";
+  var STORAGE_KEY = "linkpage_settings_v12";
   var DEFAULT_SETTINGS = {
     brand: {
       name: "Eldoctor",
       description: "\u0627\u0644\u062F\u0643\u062A\u0648\u0631 \u0644\u0644\u0645\u0633\u062A\u0644\u0632\u0645\u0627\u062A \u0627\u0644\u0637\u0628\u064A\u0629 \u0648\u0645\u0633\u062A\u062D\u0636\u0631\u0627\u062A \u0627\u0644\u062A\u062C\u0645\u064A\u0644",
-      website: "https://doctor.drugza.net"
+      website: ""
     },
     logo: {
       url: "./logo.svg",
@@ -2129,17 +2129,17 @@
       glassBlur: "16px"
     },
     colors: {
-      primary: "#4f46e5",
-      secondary: "#6366f1",
-      background: "#f8fafc",
+      primary: "#ec4899",
+      secondary: "#f472b6",
+      background: "#fdf2f8",
       surface: "#ffffff",
-      text: "#0f172a",
-      textSecondary: "#64748b",
+      text: "#1f2937",
+      textSecondary: "#4b5563",
       buttonBg: "#ffffff",
-      buttonText: "#0f172a",
-      buttonBorder: "#e2e8f0",
-      buttonHover: "#f8fafc",
-      accent: "#818cf8"
+      buttonText: "#1f2937",
+      buttonBorder: "#fbcfe8",
+      buttonHover: "#fce7f3",
+      accent: "#f43f5e"
     },
     typography: {
       fontFamily: "Cairo",
@@ -2154,16 +2154,16 @@
     },
     links: [
       {
-        id: "l0",
-        platform: "Website",
-        label: "\u0627\u0644\u0645\u0648\u0642\u0639 \u0627\u0644\u0625\u0644\u0643\u062A\u0631\u0648\u0646\u064A \u0627\u0644\u0631\u0633\u0645\u064A",
-        url: "https://doctor.drugza.net",
+        id: "l_map",
+        platform: "Google Maps",
+        label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
+        url: "https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA",
         enabled: true,
         featured: true,
         badge: "\u0627\u0644\u0645\u0648\u0642\u0639"
       },
       {
-        id: "l1",
+        id: "l_wa",
         platform: "WhatsApp",
         label: "\u062A\u0648\u0627\u0635\u0644 \u0639\u0628\u0631 \u0648\u0627\u062A\u0633\u0627\u0628",
         url: "https://wa.me/201103131373",
@@ -2172,7 +2172,16 @@
         badge: "\u0645\u0645\u064A\u0651\u0632"
       },
       {
-        id: "l2",
+        id: "l_phone",
+        platform: "Phone",
+        label: "\u0627\u062A\u0635\u0644 \u0628\u0646\u0627 \u0627\u0644\u0622\u0646 (+201507006060)",
+        url: "tel:+201507006060",
+        enabled: true,
+        featured: true,
+        badge: "\u0627\u062A\u0635\u0627\u0644"
+      },
+      {
+        id: "l_fb",
         platform: "Facebook",
         label: "\u0635\u0641\u062D\u062A\u0646\u0627 \u0639\u0644\u0649 \u0641\u064A\u0633\u0628\u0648\u0643",
         url: "https://www.facebook.com/profile.php?id=61573099820423",
@@ -2181,16 +2190,7 @@
         badge: ""
       },
       {
-        id: "l3",
-        platform: "Instagram",
-        label: "\u062D\u0633\u0627\u0628\u0646\u0627 \u0639\u0644\u0649 \u0625\u0646\u0633\u062A\u063A\u0631\u0627\u0645",
-        url: "https://www.instagram.com/eldoc.cosmetics/",
-        enabled: true,
-        featured: false,
-        badge: ""
-      },
-      {
-        id: "l4",
+        id: "l_tg",
         platform: "Telegram",
         label: "\u0642\u0646\u0627\u062A\u0646\u0627 \u0639\u0644\u0649 \u062A\u0644\u064A\u062C\u0631\u0627\u0645",
         url: "https://t.me/eldocstor",
@@ -2199,13 +2199,13 @@
         badge: ""
       },
       {
-        id: "l5",
-        platform: "Google Maps",
-        label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
-        url: "https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA",
+        id: "l_ig",
+        platform: "Instagram",
+        label: "\u062D\u0633\u0627\u0628\u0646\u0627 \u0639\u0644\u0649 \u0625\u0646\u0633\u062A\u063A\u0631\u0627\u0645",
+        url: "https://www.instagram.com/eldoc.cosmetics/",
         enabled: true,
-        featured: true,
-        badge: "\u0627\u0644\u0645\u0648\u0642\u0639"
+        featured: false,
+        badge: ""
       }
     ],
     seo: {
@@ -2214,7 +2214,7 @@
       keywords: "Eldoctor, \u0627\u0644\u062F\u0643\u062A\u0648\u0631, \u0645\u0633\u062A\u0644\u0632\u0645\u0627\u062A \u0637\u0628\u064A\u0629, \u0645\u0633\u062A\u062D\u0636\u0631\u0627\u062A \u062A\u062C\u0645\u064A\u0644, \u062A\u062C\u0645\u064A\u0644, \u0637\u0628\u064A\u0629"
     },
     qr: {
-      color: "#382d54",
+      color: "#ec4899",
       bgColor: "#ffffff",
       showLogo: true
     }
@@ -2233,49 +2233,71 @@
       typography: { ...DEFAULT_SETTINGS.typography, ...parsed.typography || {} },
       seo: { ...DEFAULT_SETTINGS.seo, ...parsed.seo || {} },
       auth: { ...DEFAULT_SETTINGS.auth, ...parsed.auth || {} },
-      qr: { ...DEFAULT_SETTINGS.qr, ...parsed.qr || {} },
-      links: Array.isArray(parsed.links) ? parsed.links : DEFAULT_SETTINGS.links
+      qr: { ...DEFAULT_SETTINGS.qr, ...parsed.qr || {} }
     };
+    merged.brand.website = "";
     if (!merged.logo.url || merged.logo.url.includes("eldoctor_logo") || merged.logo.url.includes("el doctor logo")) {
       merged.logo.url = "./logo.svg";
     }
     if (!merged.profile.avatar || merged.profile.avatar.includes("eldoctor_logo") || merged.profile.avatar.includes("el doctor logo")) {
       merged.profile.avatar = "./logo.svg";
     }
-    const targetMapUrl = "https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA";
-    const targetWhatsappUrl = "https://wa.me/201103131373";
-    if (Array.isArray(merged.links)) {
-      let waItem = merged.links.find((l) => l.platform === "WhatsApp" || l.url && (l.url.includes("wa.me") || l.url.includes("whatsapp.com")));
-      if (waItem) {
-        waItem.url = targetWhatsappUrl;
-      } else {
-        merged.links.push({
-          id: "l_wa_" + Date.now(),
-          platform: "WhatsApp",
-          label: "\u062A\u0648\u0627\u0635\u0644 \u0639\u0628\u0631 \u0648\u0627\u062A\u0633\u0627\u0628",
-          url: targetWhatsappUrl,
-          enabled: true,
-          featured: true,
-          badge: "\u0645\u0645\u064A\u0651\u0632"
-        });
+    merged.links = [
+      {
+        id: "l_map",
+        platform: "Google Maps",
+        label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
+        url: "https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA",
+        enabled: true,
+        featured: true,
+        badge: "\u0627\u0644\u0645\u0648\u0642\u0639"
+      },
+      {
+        id: "l_wa",
+        platform: "WhatsApp",
+        label: "\u062A\u0648\u0627\u0635\u0644 \u0639\u0628\u0631 \u0648\u0627\u062A\u0633\u0627\u0628",
+        url: "https://wa.me/201103131373",
+        enabled: true,
+        featured: true,
+        badge: "\u0645\u0645\u064A\u0651\u0632"
+      },
+      {
+        id: "l_phone",
+        platform: "Phone",
+        label: "\u0627\u062A\u0635\u0644 \u0628\u0646\u0627 \u0627\u0644\u0622\u0646 (+201507006060)",
+        url: "tel:+201507006060",
+        enabled: true,
+        featured: true,
+        badge: "\u0627\u062A\u0635\u0627\u0644"
+      },
+      {
+        id: "l_fb",
+        platform: "Facebook",
+        label: "\u0635\u0641\u062D\u062A\u0646\u0627 \u0639\u0644\u0649 \u0641\u064A\u0633\u0628\u0648\u0643",
+        url: "https://www.facebook.com/profile.php?id=61573099820423",
+        enabled: true,
+        featured: false,
+        badge: ""
+      },
+      {
+        id: "l_tg",
+        platform: "Telegram",
+        label: "\u0642\u0646\u0627\u062A\u0646\u0627 \u0639\u0644\u0649 \u062A\u0644\u064A\u062C\u0631\u0627\u0645",
+        url: "https://t.me/eldocstor",
+        enabled: true,
+        featured: false,
+        badge: ""
+      },
+      {
+        id: "l_ig",
+        platform: "Instagram",
+        label: "\u062D\u0633\u0627\u0628\u0646\u0627 \u0639\u0644\u0649 \u0625\u0646\u0633\u062A\u063A\u0631\u0627\u0645",
+        url: "https://www.instagram.com/eldoc.cosmetics/",
+        enabled: true,
+        featured: false,
+        badge: ""
       }
-      let mapItem = merged.links.find((l) => l.platform === "Google Maps" || l.url && (l.url.includes("30.104801") || l.url.includes("google.com/maps") || l.url.includes("bing.com/maps") || l.url.includes("maps.app.goo.gl") || l.url.includes("facebook.com/l.php")));
-      if (mapItem) {
-        mapItem.url = targetMapUrl;
-        mapItem.label = "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629";
-        mapItem.badge = "\u0627\u0644\u0645\u0648\u0642\u0639";
-      } else {
-        merged.links.push({
-          id: "l_map_" + Date.now(),
-          platform: "Google Maps",
-          label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
-          url: targetMapUrl,
-          enabled: true,
-          featured: true,
-          badge: "\u0627\u0644\u0645\u0648\u0642\u0639"
-        });
-      }
-    }
+    ];
     return merged;
   }
   function loadSettings() {
@@ -2662,28 +2684,24 @@
     if (logoSrc.includes("eldoctor_logo") || logoSrc.includes("el doctor logo")) {
       logoSrc = "./logo.svg";
     }
-    const activeLinks = (links || []).filter((l) => l.enabled);
+    const activeLinks = (links || []).filter((l) => l.enabled && l.platform !== "Website" && !(l.url && l.url.includes("doctor.drugza.net")));
     let linksHtml = "";
     if (activeLinks.length === 0) {
       linksHtml = `
       <div class="empty-state">
         <div class="empty-state-icon">${UI_ICONS.sparkler}</div>
-        <p>No active links available yet. Add links in the editor!</p>
+        <p>\u0644\u0627 \u062A\u0648\u062C\u062F \u0631\u0648\u0627\u0628\u0637 \u0645\u062A\u0627\u062D\u0629 \u062D\u0627\u0644\u064A\u0627\u064B.</p>
       </div>
     `;
     } else {
       linksHtml = activeLinks.map((link, idx) => {
         const isFeatured = link.featured;
         let platformIcon = getPlatformIcon(link.platform);
-        if (link.platform === "Website" && (logoSrc || avatarSrc)) {
-          const logoImg = logoSrc || avatarSrc;
-          platformIcon = `<img src="${escapeHtml(logoImg)}" alt="Website Logo" class="website-link-icon-img" style="width: 26px; height: 26px; object-fit: contain; border-radius: 6px; background: #ffffff; padding: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" onerror="this.onerror=null; this.outerHTML='${escapeHtml(getPlatformIcon("Website"))}';" />`;
-        }
+        const isTelOrMailto = link.url && (link.url.startsWith("tel:") || link.url.startsWith("mailto:"));
         const staggerClass = `stagger-${idx % 7 + 1}`;
         return `
         <a href="${escapeHtml(link.url)}" 
-           target="_blank" 
-           rel="noopener noreferrer" 
+           ${isTelOrMailto ? "" : 'target="_blank" rel="noopener noreferrer"'} 
            class="link-card ${isFeatured ? "link-card-featured" : ""} has-ripple animate-slide-up ${staggerClass}"
            data-link-id="${link.id}">
           <div class="link-card-icon">
@@ -2693,7 +2711,7 @@
             <span class="link-card-label">${escapeHtml(link.label || link.platform)}</span>
             ${link.badge ? `<span class="link-card-badge">${escapeHtml(link.badge)}</span>` : ""}
           </div>
-          <span class="link-card-arrow">${UI_ICONS.externalLink}</span>
+          <span class="link-card-arrow">${isTelOrMailto ? platformIcon : UI_ICONS.externalLink}</span>
         </a>
       `;
       }).join("");
