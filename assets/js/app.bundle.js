@@ -2104,7 +2104,7 @@
   });
 
   // assets/js/storage.js
-  var STORAGE_KEY = "linkpage_settings_v9";
+  var STORAGE_KEY = "linkpage_settings_v10";
   var DEFAULT_SETTINGS = {
     brand: {
       name: "Eldoctor",
@@ -2166,7 +2166,7 @@
         id: "l1",
         platform: "WhatsApp",
         label: "\u062A\u0648\u0627\u0635\u0644 \u0639\u0628\u0631 \u0648\u0627\u062A\u0633\u0627\u0628",
-        url: "https://wa.me/01103131373",
+        url: "https://wa.me/201103131373",
         enabled: true,
         featured: true,
         badge: "\u0645\u0645\u064A\u0651\u0632"
@@ -2202,7 +2202,7 @@
         id: "l5",
         platform: "Google Maps",
         label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
-        url: "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bing.com%2Fmaps%2Fdefault.aspx%3Fv%3D2%26pc%3DFACEBK%26mid%3D8100%26where1%3D43%2520-%2520%25D8%25B4%25D8%25A7%25D8%25B1%25D8%25B9%2520%25D8%25B9%25D8%25B2%25D9%258A%25D8%25B2%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B5%25D8%25B1%25D9%2589%2520%25D9%2585%25D9%2586%2520%25D8%25AC%25D8%25B3%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25B3%25D9%2588%25D9%258A%25D8%25B3%2520-%2520%25D8%25A8%25D8%25AC%25D9%2588%25D8%25A7%25D8%25B1%2520%25D9%2585%25D8%25AD%25D8%25B7%25D8%25A9%2520%25D9%2585%25D8%25AA%25D8%25B1%25D9%2588%2520%25D8%25A7%25D9%2584%25D9%2586%25D8%25B2%25D9%2587%25D8%25A9%252C%2520Cairo%252C%2520Egypt%26FORM%3DFBKPL1%26mkt%3Den-US%26fbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFVM3puSkFFcXJQYXh1cjBRc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtKCMHS8Irg1pPqOrBNIrkJnt315cSUexORNXb7w_ea8FLVM4jvf404vduHs_aem_wDDs4m9YdlnJ82rV77oEeA&h=AUCLf-X6MCIp4rvU84W1CNUHVYvUtPeOQ4NFzvAhvt5OhaCDVVAJJbDKcGQ4GEKTZj1Lj30S0D5qSjVidiS8-2TserhtG7VJGjma46C9l19A5H6DMkYL6Ugi99zSH6-uVsJ0",
+        url: "https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA",
         enabled: true,
         featured: true,
         badge: "\u0627\u0644\u0645\u0648\u0642\u0639"
@@ -2242,16 +2242,31 @@
     if (!merged.profile.avatar || merged.profile.avatar.includes("eldoctor_logo") || merged.profile.avatar.includes("el doctor logo")) {
       merged.profile.avatar = "./logo.svg";
     }
-    const targetMapUrl = "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bing.com%2Fmaps%2Fdefault.aspx%3Fv%3D2%26pc%3DFACEBK%26mid%3D8100%26where1%3D43%2520-%2520%25D8%25B4%25D8%25A7%25D8%25B1%25D8%25B9%2520%25D8%25B9%25D8%25B2%25D9%258A%25D8%25B2%2520%25D8%25A7%25D9%2584%25D9%2585%25D8%25B5%25D8%25B1%25D9%2589%2520%25D9%2585%25D9%2586%2520%25D8%25AC%25D8%25B3%25D8%25B1%2520%25D8%25A7%25D9%2584%25D8%25B3%25D9%2588%25D9%258A%25D8%25B3%2520-%2520%25D8%25A8%25D8%25AC%25D9%2588%25D8%25A7%25D8%25B1%2520%25D9%2585%25D8%25AD%25D8%25B7%25D8%25A9%2520%25D9%2585%25D8%25AA%25D8%25B1%25D9%2588%2520%25D8%25A7%25D9%2584%25D9%2586%25D8%25B2%25D9%2587%25D8%25A9%252C%2520Cairo%252C%2520Egypt%26FORM%3DFBKPL1%26mkt%3Den-US%26fbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETFVM3puSkFFcXJQYXh1cjBRc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtKCMHS8Irg1pPqOrBNIrkJnt315cSUexORNXb7w_ea8FLVM4jvf404vduHs_aem_wDDs4m9YdlnJ82rV77oEeA&h=AUCLf-X6MCIp4rvU84W1CNUHVYvUtPeOQ4NFzvAhvt5OhaCDVVAJJbDKcGQ4GEKTZj1Lj30S0D5qSjVidiS8-2TserhtG7VJGjma46C9l19A5H6DMkYL6Ugi99zSH6-uVsJ0";
+    const targetMapUrl = "https://maps.app.goo.gl/NjzRfcmJhzs8SFoCA";
+    const targetWhatsappUrl = "https://wa.me/201103131373";
     if (Array.isArray(merged.links)) {
-      let mapItem = merged.links.find((l) => l.platform === "Google Maps" || l.url && (l.url.includes("30.104801") || l.url.includes("google.com/maps") || l.url.includes("bing.com/maps")));
+      let waItem = merged.links.find((l) => l.platform === "WhatsApp" || l.url && (l.url.includes("wa.me") || l.url.includes("whatsapp.com")));
+      if (waItem) {
+        waItem.url = targetWhatsappUrl;
+      } else {
+        merged.links.push({
+          id: "l_wa_" + Date.now(),
+          platform: "WhatsApp",
+          label: "\u062A\u0648\u0627\u0635\u0644 \u0639\u0628\u0631 \u0648\u0627\u062A\u0633\u0627\u0628",
+          url: targetWhatsappUrl,
+          enabled: true,
+          featured: true,
+          badge: "\u0645\u0645\u064A\u0651\u0632"
+        });
+      }
+      let mapItem = merged.links.find((l) => l.platform === "Google Maps" || l.url && (l.url.includes("30.104801") || l.url.includes("google.com/maps") || l.url.includes("bing.com/maps") || l.url.includes("maps.app.goo.gl") || l.url.includes("facebook.com/l.php")));
       if (mapItem) {
         mapItem.url = targetMapUrl;
         mapItem.label = "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629";
         mapItem.badge = "\u0627\u0644\u0645\u0648\u0642\u0639";
       } else {
         merged.links.push({
-          id: "l_" + Date.now(),
+          id: "l_map_" + Date.now(),
           platform: "Google Maps",
           label: "\u0645\u0635\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0627\u0644\u0642\u0627\u0647\u0631\u0629 \xB7 \u0642\u0633\u0645 \u0627\u0644\u0646\u0632\u0647\u0629",
           url: targetMapUrl,
