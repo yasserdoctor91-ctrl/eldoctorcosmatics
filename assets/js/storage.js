@@ -9,7 +9,7 @@ export const DEFAULT_SETTINGS = {
   brand: {
     name: 'Eldoctor',
     description: 'الدكتور للمستلزمات الطبية ومستحضرات التجميل',
-    website: 'https://doctor.drugza.net'
+  /**  website: 'https://doctor.drugza.net'*/
   },
   logo: {
     url: './logo.svg', // Base64 data URL or external image URL
@@ -51,7 +51,7 @@ export const DEFAULT_SETTINGS = {
     enabled: true
   },
   links: [
-    {
+    /**{
       id: 'l0',
       platform: 'Website',
       label: 'الموقع الإلكتروني الرسمي',
@@ -59,7 +59,7 @@ export const DEFAULT_SETTINGS = {
       enabled: true,
       featured: true,
       badge: 'الموقع'
-    },
+    },*/
     {
       id: 'l1',
       platform: 'WhatsApp',
